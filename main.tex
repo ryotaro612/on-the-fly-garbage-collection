@@ -40,13 +40,39 @@
   \item Goで実装されたランタイム
   \end{itemize}
 \end{frame}
+
+\lstdefinestyle{gostyle}
+{
+  language = go,
+  keywordstyle = {\bfseries\color{highlight}},
+  morekeywords = [1]{block},
+  keywords=[1]{type,block,struct,io.Reader,int64,fileReader,error}
+}
+
 \begin{frame}
   \frametitle{局所的なメモリの割り当て}
-  {\large フィールドは構造体に埋め込まれる}
+  {\large フィールドは構造体に埋め込まれる\supercite{ismmkeynote}}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \lstinputlisting[language=go, style=gostyle]{./code/struct.go}
+    \end{column}
+    \begin{column}{0.5\textwidth}  %%<--- here
+      \begin{figure}[h]
+        \includegraphics[width=6cm]{./img/address.png}
+        \caption[memory]{連続領域への割り当て}
+        \label{fig:struct}
+      \end{figure}
+    \end{column}
+  \end{columns}  
 \end{frame}
 \begin{frame}
-  \frametitle{interior pointer}
-  {\large interiro pointerを使う間、構造体はメモリに残る}
+  \frametitle{interior pointer（フィールドの内部を指すポインタ）}
+  {\large interior pointerを使う間、構造体全体がメモリに残る}
+  \begin{figure}[h]
+    \includegraphics[width=6cm]{./img/interior.png}
+    \caption[memory]{interior pointer}
+    \label{fig:interor}
+  \end{figure}  
 \end{frame}
 \section{On-the-Fly Garbage Collection}
 \begin{frame}
@@ -55,16 +81,23 @@
   \begin{itemize}
   \item 大域やスタックの変数が参照する値はルート
   \item ガベージノードを白に着色
-  \item 中間ノードを黒に着色
+  \item ルートから到達できる中間ノードや葉を黒に着色
   \item ノード数は固定
   \end{itemize}
 \end{frame}
 \begin{frame}
   \frametitle{灰色がある理由}
-  {\large 黒から白への有向辺がないことを保証したい}
+  {\large 黒から白に向かう辺がないことを保証したい}
+  \par
+  \begin{figure}[h]
+    \includegraphics[width=4.8cm]{./img/black-white.png}
+    \caption[memory]{黒ノードから白ノードへの参照}
+    \label{fig:black-white}
+  \end{figure}
 \end{frame}
+
 \begin{frame}
-  \frametitle{証明を単純にするために}
+  \frametitle{証明の単純化}
   {\large 操作の種類を減らしたい}
   \begin{itemize}
     \item 操作の種類
