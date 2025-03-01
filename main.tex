@@ -17,7 +17,7 @@
 \begin{frame}[noframenumbering, plain]
 \titlepage
 \end{frame}
-\section{Goのランタイム}
+\section{ランタイム}
 \begin{frame}
   \frametitle{Goのガベージコレクション}
   {\large concurrent, tri-color, mark-sweep collector\supercite{go15gc}}
@@ -38,9 +38,10 @@
 \end{frame}
 \begin{frame}
   \frametitle{interior pointer}
-  {\large フィールドを参照する間、構造体はメモリに残る}
+  {\large interiro pointerを使う間、構造体はメモリに残る}
 \end{frame}
-
+\section{On-the-Fly Garbage Collection: An Exercise in Cooperation}
+\section{ガベージコレクションの実装}
 \begin{frame}[allowframebreaks,t]
   \frametitle{参考資料}
   \printbibliography
