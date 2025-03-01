@@ -79,7 +79,28 @@
   \frametitle{アプリケーション (mutator) の振る舞い}
   {\large 向き先のノードを灰色にして、有向辺の向き先を変える}
 \end{frame}
+\begin{frame}
+  \frametitle{マーキングフェース}
+  {\large 白い向き先を灰色にして、ノードを黒くする}
+\end{frame}
+\begin{frame}
+  \frametitle{マーキングフェースの疑似コード}
+  {\large ルートノードを灰色にする}
+\end{frame}
+\begin{frame}
+  \frametitle{マーキングフェースの疑似コード}
+  {\large 一巡しても灰色ノードがなければ終了}
+\end{frame}
+\begin{frame}
+  \frametitle{アペンディングフェーズ}
+  {\large 白ノードをリストに追加し、黒ノードを白にする}
+  灰色はない
+\end{frame}
 \section{ガベージコレクションの実装}
+\begin{frame}
+  \frametitle{GCのフェーズ}
+  {\large マーキングの終了時にSTWがある}
+\end{frame}
 \begin{frame}[allowframebreaks,t]
   \frametitle{参考資料}
   \printbibliography
