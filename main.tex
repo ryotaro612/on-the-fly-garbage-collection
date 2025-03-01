@@ -69,8 +69,15 @@
   疑似終端ノード\texttt{NIL}でノードの出次数を2に限定
 \end{frame}
 \begin{frame}
-  \frametitle{a}
-  {\large a}
+  \frametitle{有向グラフを限定}
+  {\large すべてを到達可能なノードにする}
+  \begin{itemize}
+  \item ルートノードでガベージノードのリストをつくる
+  \end{itemize}
+\end{frame}
+\begin{frame}
+  \frametitle{アプリケーション (mutator) の振る舞い}
+  {\large 向き先のノードを灰色にして、有向辺の向き先を変える}
 \end{frame}
 \section{ガベージコレクションの実装}
 \begin{frame}[allowframebreaks,t]
