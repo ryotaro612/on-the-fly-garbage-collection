@@ -17,7 +17,7 @@
 \begin{frame}[noframenumbering, plain]
 \titlepage
 \end{frame}
-\section{導入}
+\section{Goのランタイム}
 \begin{frame}
   \frametitle{Goのガベージコレクション}
   {\large concurrent, tri-color, mark-sweep collector\supercite{go15gc}}
@@ -30,11 +30,17 @@
 \end{frame}
 \begin{frame}
   \frametitle{古典的なGCを採用した背景}
-  {\large Go固有のランタイムがある\supercite{go15gc}}  
+  {\large Go固有のランタイムがある}
 \end{frame}
 \begin{frame}
-  \frametitle{a}
+  \frametitle{局所的なメモリの割り当て}
+  {\large 構造体にフィールドは埋め込まれる}
 \end{frame}
+\begin{frame}
+  \frametitle{interior pointer}
+  {\large フィールドを参照する間、構造体はメモリに残る}
+\end{frame}
+
 \begin{frame}[allowframebreaks,t]
   \frametitle{参考資料}
   \printbibliography
