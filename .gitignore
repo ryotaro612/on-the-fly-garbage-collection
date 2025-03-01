@@ -1,0 +1,22 @@
+# Latex
+*.aux
+*.bcf
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+main.pdf
+*.run.xml
+*.snm
+*.toc
+*.vrb
+*.nav
+*.synctex.gz
+*-SAVE-ERROR
+*.bkp
+# Emacs
+*~
+.\#*
+\#*
+main-en.pdf

@@ -1,0 +1,65 @@
+% Title page
+\setbeamertemplate{title page} {
+  \vspace{0.4\paperheight}
+  {\Large \textcolor{highlight}{\inserttitle}}
+  \par
+  \vspace{0.3\paperheight}
+  \begin{flushright}
+    \textcolor{highlight}{\insertauthor}
+    \par
+    \vspace{0.020\paperheight}
+    \textcolor{highlight}{\insertdate}
+    \par
+  \end{flushright}
+}
+
+% Table of contents
+
+\setbeamercolor{section in toc}{fg=primary}
+\setbeamertemplate{section in toc}{
+  \inserttocsectionnumber.
+  \textbf{\inserttocsection}
+}
+\setbeamertemplate{section in toc shaded}{
+  \inserttocsectionnumber.
+  \inserttocsection
+}
+% セクションのはじまりに目次ページを挿入する
+\AtBeginSection[]{
+  \begin{frame}
+    \frametitle{Outline}
+    \tableofcontents[currentsection, hideallsubsections]
+  \end{frame}
+}
+
+% Itemize
+% 記号
+\setbeamercolor{itemize item}{fg=primary}
+\setbeamertemplate{itemize item}{$\circ$}
+\setbeamercolor{itemize subitem}{fg=primary}
+\setbeamertemplate{itemize subitem}{$\circ$}
+\setbeamercolor{description item}{fg=primary}
+\setbeamercolor{enumerate item}{fg=primary}
+\setbeamercolor{enumerate subitem}{fg=primary}
+% Footnote
+
+% remove navigation symbols 
+\usenavigationsymbolstemplate{}
+
+% 図や表の見出しにcaption: やimage: をつけない
+\setbeamertemplate{caption}{\insertcaption}
+% キャプションと図や表の間隔を小くする 0ptでもくっつかない
+\setlength{\abovecaptionskip}{0pt}
+
+% \newcommand{\colorhref}[2]{\href{#1}{\color{link}{#2}}}
+
+% Bibliography
+% これがないと参考文献の色が青くなる
+\setbeamertemplate{bibliography item}{\insertbiblabel}
+\setbeamercolor{bibliography entry author}{fg=primary}
+\setbeamercolor{bibliography entry title}{fg=primary}
+\setbeamercolor{bibliography entry location}{fg=primary}
+\setbeamercolor{bibliography entry note}{fg=primary}
+\setbeamercolor{bibliography item}{fg=primary}
+
+

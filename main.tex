@@ -1,0 +1,33 @@
+
+% A cheat sheet
+% https://www.cpt.univ-mrs.fr/~masson/latex/Beamer-appearance-cheat-sheet.pdf
+% ptは細かい指定はできないらしい
+\documentclass[unicode, 14pt, aspectratio=169]{beamer}
+\usetheme{titech}
+\addbibresource{main.bib}
+\date{\today}
+\title{Goのガベージコレクション}
+\author{\texttt{ryotaro612}}
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+\begin{document}
+\begin{frame}[noframenumbering, plain]
+\titlepage
+\end{frame}
+\section{Go}
+
+\begin{frame}
+  \frametitle{Jepsen: 分散システムのテストフレームワーク}
+  {\large Jepsenはフォールトインジェクションに特化}
+\end{frame}
+
+% \begin{frame}[allowframebreaks,t]
+%   \frametitle{参考資料}
+%   \printbibliography
+%   \nocite{*}
+% \end{frame}
+\end{document}
