@@ -16,10 +16,13 @@
 % Table of contents
 
 \setbeamercolor{section in toc}{fg=primary}
+% 長いセクション名の折りかえし
+% https://tex.stackexchange.com/questions/726440/adjusting-the-wrapped-alignment-of-beamer-table-of-contents
 \setbeamertemplate{section in toc}{
-  \inserttocsectionnumber.
-  \textbf{\inserttocsection}
+ \inserttocsectionnumber.
+ \textbf{\inserttocsection}
 }
+
 \setbeamertemplate{section in toc shaded}{
   \inserttocsectionnumber.
   \inserttocsection
