@@ -48,11 +48,19 @@
   \item 大域やスタックの変数が参照する値はルート
   \item ガベージノードを白に着色
   \item 中間ノードを黒に着色
+  \item ノード数は固定
   \end{itemize}
 \end{frame}
 \begin{frame}
   \frametitle{灰色がある理由}
   {\large 黒から白への有向辺がないことを保証したい}
+\end{frame}
+\begin{frame}
+  \frametitle{証明を難しくするもの}
+  {\large 操作の種類を減らしたい}
+  \begin{itemize}
+    \item 操作の種類
+  \end{itemize}
 \end{frame}
 \section{ガベージコレクションの実装}
 \begin{frame}[allowframebreaks,t]
