@@ -18,14 +18,26 @@
 \titlepage
 \end{frame}
 \section{導入}
-\begin{frame}[t]
+\begin{frame}
   \frametitle{Goのガベージコレクション}
-  {\large 3色マーキングによるコンカレント マーク\&スイープ}
+  {\large concurrent, tri-color, mark-sweep collector\supercite{go15gc}}
+  \begin{itemize}
+  \item 原典は、DijkstraとLamportによるOn-the-Fly Garbage Collection: An Exercise in Cooperation (1978)
+  \item 世代別GCではない
+  \item ZGCでも使われている
+  \item エンタープライズ級のGCではない
+  \end{itemize}
 \end{frame}
-
-% \begin{frame}[allowframebreaks,t]
-%   \frametitle{参考資料}
-%   \printbibliography
-%   \nocite{*}
-% \end{frame}
+\begin{frame}
+  \frametitle{古典的なGCを採用した背景}
+  {\large Go固有のランタイムがある\supercite{go15gc}}  
+\end{frame}
+\begin{frame}
+  \frametitle{a}
+\end{frame}
+\begin{frame}[allowframebreaks,t]
+  \frametitle{参考資料}
+  \printbibliography
+  \nocite{*}
+\end{frame}
 \end{document}
