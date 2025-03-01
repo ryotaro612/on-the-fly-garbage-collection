@@ -34,13 +34,20 @@
 \end{frame}
 \begin{frame}
   \frametitle{局所的なメモリの割り当て}
-  {\large 構造体にフィールドは埋め込まれる}
+  {\large フィールドは構造体に埋め込まれる}
 \end{frame}
 \begin{frame}
   \frametitle{interior pointer}
   {\large interiro pointerを使う間、構造体はメモリに残る}
 \end{frame}
 \section{On-the-Fly Garbage Collection}
+\begin{frame}
+  \frametitle{有向グラフによるヒープの表現}
+  {\large ルートから到達できないノードをガベージとみなす}
+  \begin{itemize}
+  \item 大域やスタックの変数が参照する値はルート
+  \end{itemize}
+\end{frame}
 
 \section{ガベージコレクションの実装}
 \begin{frame}[allowframebreaks,t]
