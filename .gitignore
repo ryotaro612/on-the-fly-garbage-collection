@@ -15,8 +15,9 @@ main.pdf
 *.synctex.gz
 *-SAVE-ERROR
 *.bkp
+*.synctex*
 # Emacs
 *~
 .\#*
 \#*
-main-en.pdf
+
