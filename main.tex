@@ -21,11 +21,14 @@
 \begin{frame}
   \frametitle{Goのガベージコレクション}
   {\large concurrent, tri-color, mark-sweep collector\supercite{go15gc}}
+  \par
+  原典は\textcolor{highlight}{{\small On-the-Fly Garbage Collection: An Exercise in Cooperation\supercite{on-the-fly}}}
   \begin{itemize}
-  \item 原典は、DijkstraとLamportによるOn-the-Fly Garbage Collection: An Exercise in Cooperation (1978)
+  \item 著者はDijkstraとLamport
+  \item 1978年に発表
+  \item JavaのZGCでも3色マーキキングが使われる\supercite{zgc}
+  \item エンタープライズ向きではない
   \item 世代別GCではない
-  \item ZGCでも使われている
-  \item エンタープライズ級のGCではない
   \end{itemize}
 \end{frame}
 \begin{frame}
