@@ -1,4 +1,4 @@
-i, k = 0, M
+i, k = 0, M # Mはノード数
 while k > 0:
   c = nodes[i].color // atomic
   if c == GRAY:

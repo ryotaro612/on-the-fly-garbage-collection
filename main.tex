@@ -170,12 +170,18 @@
 \begin{frame}
   \frametitle{アペンディングフェーズ}
   {\large 白ノードをリストに追加し、黒ノードを白にする}
-  灰色はない
+  \lstinputlisting[language=python,style=pystyle]{./code/appending.py}  
+  このフェーズには、灰色のノードはない
 \end{frame}
 \section{ガベージコレクションの実装}
 \begin{frame}
-  \frametitle{GCのフェーズ}
-  {\large マーキングの終了時にSTWがある}
+  \frametitle{Goのガベージコレクションのフェーズ}
+  {\large マーキングの終了時にSTWがある\supercite{go-gc}}
+  \begin{figure}[h]
+    \includegraphics[width=6cm]{./img/phase.png}
+    \caption{GoのGCのライフサイクル}
+    \label{fig:phase}
+  \end{figure}
 \end{frame}
 \begin{frame}[allowframebreaks,t]
   \frametitle{参考資料}
