@@ -49,6 +49,14 @@
   keywords=[1]{type,block,struct,io.Reader,int64,fileReader,error}
 }
 
+\lstdefinestyle{pystyle}
+{
+  language = python,
+  keywordstyle = {\bfseries\color{highlight}}
+  % morekeywords = [1]{block},
+  % keywords=[1]{type,block,struct,io.Reader,int64,fileReader,error}
+}
+
 \begin{frame}
   \frametitle{局所的なメモリの割り当て}
   {\large フィールドは構造体に埋め込まれる\supercite{ismmkeynote}}
@@ -95,38 +103,66 @@
     \label{fig:black-white}
   \end{figure}
 \end{frame}
-
 \begin{frame}
   \frametitle{証明の単純化}
   {\large 操作の種類を減らしたい}
-  \begin{itemize}
-    \item 操作の種類
-  \end{itemize}
-\end{frame}
-\begin{frame}
-  \frametitle{有向グラフを限定}
-  {\large 出力のないノードをなくす}
   \par
-  疑似終端ノード\texttt{NIL}でノードの出次数を2に限定
+  \vspace{12pt}
+  \textcolor{highlight}{操作を多様にするもの}
+  \begin{itemize}
+  \item ノードが到達できるか
+  \item ノードの出次数
+  \item 操作の種類: 追加、削除、向き先の変更
+  \end{itemize}
 \end{frame}
 \begin{frame}
-  \frametitle{有向グラフを限定}
-  {\large すべてを到達可能なノードにする}
-  \begin{itemize}
-  \item ルートノードでガベージノードのリストをつくる
-  \end{itemize}
+  \frametitle{出次数を統一}
+  {\large 終端ノード\texttt{NIL}でノードの出次数を2に限定}
+  \begin{figure}[h]
+    \includegraphics[width=8cm]{./img/nil.png}
+    \caption[memory]{\texttt{NIL}の導入}
+    \label{fig:nil}
+  \end{figure}  
+\end{frame}
+\begin{frame}
+  \frametitle{すべてのノードに到達可能}
+  {\large ルートノードでガベージノードのリストをつくる}
+  \begin{figure}[h]
+    \includegraphics[width=10cm]{./img/freelist.png}
+    \caption{リストの導入}
+    \label{fig:freelist}
+  \end{figure}
 \end{frame}
 \begin{frame}
   \frametitle{アプリケーション (mutator) の振る舞い}
-  {\large 向き先のノードを灰色にして、有向辺の向き先を変える}
+  {\large 向き先の白いノードを灰にして、辺の向き先を変える}
+  \begin{figure}[h]
+    \includegraphics[width=6cm]{./img/mutator.png}
+    \caption{mutatorの操作}
+    \label{fig:mutator}
+  \end{figure}
+  \vspace{-1cm}
+  \begin{itemize}
+  \item step2で、前回変更した有向辺の白い向き先を灰色にする
+  \item 向き先が灰か黒ならstep2はいらない
+  \item step2とstep3は別のアトミックな操作でいい
+  \end{itemize}
 \end{frame}
 \begin{frame}
   \frametitle{マーキングフェース}
-  {\large 白い向き先を灰色にして、ノードを黒くする}
+  {\large 後続の白いノードを灰色にして、ノードを黒くする}
+  \begin{figure}[h]
+    \includegraphics[width=12cm]{./img/marking.png}
+    % \caption{マーキング}
+    \label{fig:marking}
+  \end{figure}
 \end{frame}
 \begin{frame}
   \frametitle{マーキングフェースの疑似コード}
   {\large ルートノードを灰色にする}
+  \begin{center}
+    \lstinputlisting[language=python,style=pystyle]{./code/marking1.py}
+    \end{center}
 \end{frame}
 \begin{frame}
   \frametitle{マーキングフェースの疑似コード}
