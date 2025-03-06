@@ -26,18 +26,18 @@
   \begin{itemize}
   \item 著者はDijkstraとLamport
   \item 1978年に発表
-  \item JavaのZGCでも3色マーキキングが使われる\supercite{zgc}
+  \item JavaのZGCでも3色マーキングが使われる\supercite{zgc}
   \item エンタープライズ向きではない
   \item 世代別GCではない
   \end{itemize}
 \end{frame}
 \begin{frame}
-  \frametitle{GCが古典的な理由}
+  \frametitle{独特なGCの理由}
   {\large Go固有のランタイムがある\supercite{go-gc}}
   \begin{itemize}
   \item 構造体のフィールドを連続領域に割り当てる
   \item 数千のGroutine
-  \item Goで実装されたランタイム
+  \item CではなくGoで実装されたランタイム
   \end{itemize}
 \end{frame}
 
